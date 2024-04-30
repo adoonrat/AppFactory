@@ -5,7 +5,7 @@
 Get-installedModule -Name IntuneWin32App
 # Retrieve auth token required for accessing Microsoft Graph
 # Delegated authentication is currently supported only, app-based authentication is on the todo-list
-Connect-MSIntuneGraph -TenantID "memtipsandtricks.tech" -Verbose
+Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Verbose
 
 
     $Publisher = "Application WP Ninja DEMO"
