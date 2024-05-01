@@ -87,7 +87,7 @@
                 "-ExecutionPolicy",
                 "Bypass",
                 "-File",
-                "${cwd}\\Toolkit\\DetectNewVersion.ps1"
+                "${cwd}/.vscode/DetectNewVersion.ps1"
             ],
             "group": {
                 "kind": "build",
