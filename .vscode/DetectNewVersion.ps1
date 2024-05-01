@@ -1,12 +1,5 @@
-#Install-Module -Name DCToolbox -RequiredVersion 1.0.18
-#Install-Module -Name AzureADPreview -AllowClobber
-#Install-Package msal.ps -Force
-
-Connect-AzureAD -AccountId 'aad-akhuditthaloet@amadeusgadlab.onmicrosoft.com'
-
-Enable-DCAzureADPIMRole
-
-######
+#Install-Module -Name IntuneWin32App
+#Install-Module -Name Evergreen -force
 
 # Retrieve access token required for accessing Microsoft Graph
 # Delegated authentication (authorization code, device code flows) are currently supported
