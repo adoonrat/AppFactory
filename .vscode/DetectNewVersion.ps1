@@ -25,7 +25,12 @@ If($Intune7zip.displayVersion -ge $EvergreenApp.Version)
 {
 $NewVersion = $EvergreenApp.Version
 $MsgBody = @{text = "New 7Zip Version $NewVersion released! "} | ConvertTo-Json
-$myTeamsWebHook = "https://amadeusworkplace.webhook.office.com/webhookb2/873fa5dc-11af-488e-add3-9b219c93ab72@b3f4f7c2-72ce-4192-aba4-d6c7719b5766/IncomingWebhook/4573bbb443614a01bdb41019d57547b5/70135612-8975-4a92-8759-c18270790385"
-Invoke-RestMethod -Method post -ContentType 'Application/Json' -Body $MsgBody -Uri $myTeamsWebHook
+
+$EnHook =  Get-Content .\.vscode\Hook.txt
+$DeHook = $EnHook | ConvertTo-SecureString
+$Code = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($DeHook))
+$Hook = Invoke-Expression $Code
+
+Invoke-RestMethod -Method post -ContentType 'Application/Json' -Body $MsgBody -Uri $Hook
 
 }
