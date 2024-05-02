@@ -4,10 +4,10 @@
 # Retrieve access token required for accessing Microsoft Graph
 # Delegated authentication (authorization code, device code flows) are currently supported
 Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com"
-Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Verbose
-Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -DeviceCode
-Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Refresh
-Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Interactive
+#Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Verbose
+#Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -DeviceCode
+#Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Refresh
+#Connect-MSIntuneGraph -TenantID "amadeusgadlab.onmicrosoft.com" -Interactive
 
 
 # Access token available in global variable

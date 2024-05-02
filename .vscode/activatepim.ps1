@@ -2,5 +2,5 @@
 #Install-Module -Name AzureADPreview -AllowClobber
 #Install-Package msal.ps -Force
 
-Connect-AzureAD -AccountId 'aad-akhuditthaloet@amadeusgadlab.onmicrosoft.com'
+Connect-AzureAD 
 Enable-DCAzureADPIMRole
