@@ -1,5 +1,5 @@
 # Vars
-. ".vscode\Global.ps1"
+[string]$Application = "$(& git branch --show-current)"
 
 $dest = "Toolkit\Files"
 

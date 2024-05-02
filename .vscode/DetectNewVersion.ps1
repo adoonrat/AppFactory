@@ -17,7 +17,7 @@ $Global:AuthenticationHeader
 #########
 
 # Vars
-. ".vscode\Global.ps1"
+[string]$Application = "$(& git branch --show-current)"
 
 $Intune7zip = Get-IntuneWin32App -DisplayName "7-zip*" | Select-Object -Property displayName, displayVersion
 $EvergreenApp = Get-EvergreenApp -Name "$Application" | Where-Object { $PSItem.Architecture -eq "x64" -and $PSItem.Type -eq "msi" }
