@@ -1,8 +1,8 @@
 {
 
     "files.exclude": {
-        ".exe": false,
-        ".msi": false,
+        ".exe": true,
+        ".msi": true,
         ".editorconfig": true,
         ".gitattributes": true,
         ".github": true,

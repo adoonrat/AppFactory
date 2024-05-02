@@ -11,15 +11,9 @@ if (-not(Test-Path -Path "$env:ProgramData\$Exe")){
 }
 
 # Execute content prep tool
-$processOptions = @{
-    FilePath = "$env:ProgramData\$Exe"
-    ArgumentList  = "-c ""$Cache"" -s ""$Cache\Deploy-Application.exe"" -o ""$env:TEMP"" -q"
-    WindowStyle = "Maximized"
-    Wait = $true
-}
-Start-Process @processOptions
+Start-Process -FilePath "$env:ProgramData\$Exe" -ArgumentList "-c $Cache -s $Cache\Deploy-Application.exe -o C:\temp\ -q" -Wait
 
 # Rename and prepare for upload
 mkdir $Desktop\$Application
-Move-Item -Path "$env:TEMP\Deploy-Application.intunewin" -Destination "$Desktop\$Application\$Application.intunewin" -Force -Verbose
+Move-Item -Path "C:\temp\Deploy-Application.intunewin" -Destination "$Desktop\$Application\$Application.intunewin" -Force -Verbose
 explorer $Desktop

@@ -78,6 +78,60 @@
             "presentation": {
                 "close": true
             }
+        },
+        {
+            "label": "Activate PIM",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${cwd}/.vscode/activatepim.ps1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "close": true
+            }
+        },
+        {
+            "label": "Download an App",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${cwd}/.vscode/downloadApp.ps1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "close": true
+            }
+        },
+        {
+            "label": "DetectNewVersion",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${cwd}/.vscode/DetectNewVersion.ps1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "close": true
+            }
         }
     ]
 }
