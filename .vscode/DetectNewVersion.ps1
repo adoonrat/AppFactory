@@ -16,15 +16,18 @@ $Global:AuthenticationHeader
 
 #########
 
+# Vars
+. ".vscode\Global.ps1"
+
 $Intune7zip = Get-IntuneWin32App -DisplayName "7-zip*" | Select-Object -Property displayName, displayVersion
-$EvergreenApp = Get-EvergreenApp -Name "7Zip" | Where-Object { $PSItem.Architecture -eq "x64" -and $PSItem.Type -eq "msi" }
+$EvergreenApp = Get-EvergreenApp -Name "$Application" | Where-Object { $PSItem.Architecture -eq "x64" -and $PSItem.Type -eq "msi" }
 
 If($Intune7zip.displayVersion -ge $EvergreenApp.Version)
-{Write-Host "7Zip package is up to date"}
+{Write-Host "$Application package is up to date"}
  else
 {
 $NewVersion = $EvergreenApp.Version
-$MsgBody = @{text = "New 7Zip Version $NewVersion released! "} | ConvertTo-Json
+$MsgBody = @{text = "New $Application Version $NewVersion released! "} | ConvertTo-Json
 
 $EnHook =  Get-Content .\.vscode\Hook.txt
 $DeHook = $EnHook | ConvertTo-SecureString

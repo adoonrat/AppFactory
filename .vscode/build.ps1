@@ -10,6 +10,7 @@ if (-not(Test-Path -Path "$env:ProgramData\$Exe")){
     Invoke-WebRequest -Uri "$Uri/$Exe" -OutFile "$env:ProgramData\$Exe"
 }
 
+
 # Execute content prep tool
 Start-Process -FilePath "$env:ProgramData\$Exe" -ArgumentList "-c $Cache -s $Cache\Deploy-Application.exe -o C:\temp\ -q" -Wait
 
